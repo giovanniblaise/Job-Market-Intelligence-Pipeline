@@ -1,8 +1,15 @@
 import occupation_data
 import boto3
+import os 
+from dotenv import load_dotenv
+
+load_dotenv()
 
 s3 = boto3.client('s3')
-bucket = 'gio-job-market-pipeline'
+bucket = os.getenv('BUCKET')
+
+if not bucket:
+    raise RuntimeError("BUCKET not found!")
 
 s3.upload_file(
     'All_Occupations.csv',
