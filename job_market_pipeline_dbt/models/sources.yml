@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw
+    database: JOB_MARKET
+    schema: RAW
+
+    tables:
+      - name: OCCUPATIONS_CLEAN
+
+      - name: JOB_ZONES_CLEAN
+
+      - name: COMP_SKILLS_CLEAN
+
+      - name: SALARY_CLEAN
